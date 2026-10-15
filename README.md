@@ -2,7 +2,7 @@
 
 Simulator, study plan, scripts and results of the article
 
-> M. Jalili Sanjarani, Y. Elmi Sola, H. Hasanpour, A. A. Neghabi, *When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense upper mid-band street networks*.
+> M. Jalili Sanjarani, Y. Elmi Sola, H. Hasanpour, A. A. Neghabi, *When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense beyond-5G upper mid-band street networks*.
 
 MemCHO is a controller for 3GPP Release-16 conditional handover (CHO). For every 10 m square of the reported
 position and every direction of travel it counts how earlier handovers decided there ended (useful, unnecessary, too

@@ -1,12 +1,12 @@
 {
- "TITLE": "When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense upper mid-band street networks",
+ "TITLE": "When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense beyond-5G upper mid-band street networks",
  "ABSTRACT": "Conditional handover (CHO) lets the user execute a prepared handover on its own, which removes the late handover command but not handovers into cells the user soon leaves. We ask whether a memory of handover outcomes per 10 m place and direction of travel can steer CHO in ultra-dense upper mid-band street deployments. The controller, MemCHO, combines these counts with the predicted path of the user and sets, per user and candidate cell, the preparation threshold and the execution offset that the Rel-16 conditional configuration already carries. We compared it with A3, a per-user margin rule and CHO in a procedure-level simulation of a 10 GHz street grid with sites every 50 to 150 m, all tuned with the same budget. A first run favoured MemCHO, but the tuned baselines sat at the edge of their tuning grids; with wider grids the result reversed. Over 360 paired runs MemCHO had 52.8% more unnecessary handovers than tuned CHO, which also stayed ahead at equal failure rate. MemCHO settled instead at a low-failure operating point: 88.9% fewer failures than CHO (46.2% without the 100 m site distance, where tuned CHO exceeded its failure budget), a 21.7% smaller prepared set and a 2.9% higher delivered rate. Without beam isolation, where interference is strongest, it also cut unnecessary handovers (16.6% fewer than CHO) and failures (58.6% fewer) but needed 85.2% more prepared cells; in an open area it did not help. Handover rates of the simulator agree with ns-3/5G-LENA; failure rates were not calibrated.",
  "KEYWORDS": [
   "Conditional handover",
-  "Mobility robustness",
   "Unnecessary handover",
-  "Handover failure",
   "Upper mid-band",
+  "Beyond-5G",
+  "6G",
   "Baseline tuning",
   "System-level simulation"
  ],
