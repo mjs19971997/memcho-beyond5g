@@ -1,0 +1,275 @@
+2026-10-15 05:05:33  run_all: design full_ext, 7 workers, device cpu (asked: auto), stages T1,T2,S1,X1,X2,X3,O1,O2,O3,S3,S2
+2026-10-15 05:05:33  stage T1: 162 jobs, 0 already done, 162 to run (5202 rule-runs)
+2026-10-15 05:36:23    T1: 8/162 jobs, 30.8 min elapsed, about 593.6 min left
+2026-10-15 05:41:02    T1: 16/162 jobs, 35.5 min elapsed, about 323.7 min left
+2026-10-15 05:56:53    T1: 24/162 jobs, 51.3 min elapsed, about 295.1 min left
+2026-10-15 05:56:54    T1: 32/162 jobs, 51.3 min elapsed, about 208.6 min left
+2026-10-15 05:56:55    T1: 40/162 jobs, 51.4 min elapsed, about 156.6 min left
+2026-10-15 05:56:55    T1: 48/162 jobs, 51.4 min elapsed, about 122.0 min left
+2026-10-15 05:56:55    T1: 56/162 jobs, 51.4 min elapsed, about 97.2 min left
+2026-10-15 05:56:56    T1: 64/162 jobs, 51.4 min elapsed, about 78.7 min left
+2026-10-15 06:31:55    T1: 72/162 jobs, 86.4 min elapsed, about 108.0 min left
+2026-10-15 06:31:56    T1: 80/162 jobs, 86.4 min elapsed, about 88.5 min left
+2026-10-15 06:31:56    T1: 88/162 jobs, 86.4 min elapsed, about 72.6 min left
+2026-10-15 06:31:57    T1: 96/162 jobs, 86.4 min elapsed, about 59.4 min left
+2026-10-15 06:31:57    T1: 104/162 jobs, 86.4 min elapsed, about 48.2 min left
+2026-10-15 06:31:58    T1: 112/162 jobs, 86.4 min elapsed, about 38.6 min left
+2026-10-15 06:55:05    T1: 120/162 jobs, 109.5 min elapsed, about 38.3 min left
+2026-10-15 06:55:06    T1: 128/162 jobs, 109.5 min elapsed, about 29.1 min left
+2026-10-15 06:55:06    T1: 136/162 jobs, 109.5 min elapsed, about 20.9 min left
+2026-10-15 06:55:06    T1: 144/162 jobs, 109.6 min elapsed, about 13.7 min left
+2026-10-15 06:55:07    T1: 152/162 jobs, 109.6 min elapsed, about 7.2 min left
+2026-10-15 07:03:59    T1: 160/162 jobs, 118.4 min elapsed, about 1.5 min left
+2026-10-15 07:12:37  rows of unchanged rules are reused from results/full_i9/results/full
+2026-10-15 07:12:37  run_all: design full_ext, 7 workers, device cpu (asked: auto), stages T1,T2,S1,X1,X2,X3,O1,O2,O3,S3,S2
+2026-10-15 07:12:37  stage T1: 162 jobs, 161 already done, 1 to run (32 rule-runs)
+2026-10-15 18:01:58  rows of unchanged rules are reused from results/full_i9/results/full
+2026-10-15 18:01:58  run_all: design full_ext, 10 workers, device cpu (asked: auto), stages T1,T2,S1,X1,X2,X3,O1,O2,O3,S3,S2
+2026-10-15 18:01:58  stage T1: 162 jobs, 161 already done, 1 to run (32 rule-runs)
+2026-10-15 18:05:12    T1: 1/1 jobs, 3.2 min elapsed, about 0.0 min left
+2026-10-15 18:05:12  stage T1 finished: 1 ok, 0 failed, 3.2 min
+2026-10-15 18:05:13  stage T2: 162 jobs, 0 already done, 162 to run (2412 rule-runs)
+2026-10-15 18:05:16    T2: 8/162 jobs, 0.0 min elapsed, about 0.8 min left
+2026-10-15 18:05:16    T2: 16/162 jobs, 0.0 min elapsed, about 0.4 min left
+2026-10-15 18:05:16    T2: 24/162 jobs, 0.0 min elapsed, about 0.3 min left
+2026-10-15 18:05:16    T2: 32/162 jobs, 0.0 min elapsed, about 0.2 min left
+2026-10-15 18:05:16    T2: 40/162 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 18:05:16    T2: 48/162 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 18:05:16    T2: 56/162 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 18:05:16    T2: 64/162 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 18:08:44    T2: 72/162 jobs, 3.5 min elapsed, about 4.4 min left
+2026-10-15 18:08:44    T2: 80/162 jobs, 3.5 min elapsed, about 3.6 min left
+2026-10-15 18:08:44    T2: 88/162 jobs, 3.5 min elapsed, about 3.0 min left
+2026-10-15 18:09:32    T2: 96/162 jobs, 4.3 min elapsed, about 3.0 min left
+2026-10-15 18:09:32    T2: 104/162 jobs, 4.3 min elapsed, about 2.4 min left
+2026-10-15 18:09:32    T2: 112/162 jobs, 4.3 min elapsed, about 1.9 min left
+2026-10-15 18:10:11    T2: 120/162 jobs, 5.0 min elapsed, about 1.7 min left
+2026-10-15 18:10:11    T2: 128/162 jobs, 5.0 min elapsed, about 1.3 min left
+2026-10-15 18:10:43    T2: 136/162 jobs, 5.5 min elapsed, about 1.1 min left
+2026-10-15 18:13:11    T2: 144/162 jobs, 8.0 min elapsed, about 1.0 min left
+2026-10-15 18:14:02    T2: 152/162 jobs, 8.8 min elapsed, about 0.6 min left
+2026-10-15 18:14:46    T2: 160/162 jobs, 9.5 min elapsed, about 0.1 min left
+2026-10-15 18:14:50    T2: 162/162 jobs, 9.6 min elapsed, about 0.0 min left
+2026-10-15 18:14:50  stage T2 finished: 162 ok, 0 failed, 9.6 min
+2026-10-15 18:14:52  stage S1: 360 jobs, 0 already done, 360 to run (6840 rule-runs)
+2026-10-15 18:17:10    S1: 18/360 jobs, 2.3 min elapsed, about 43.8 min left
+2026-10-15 18:19:11    S1: 36/360 jobs, 4.3 min elapsed, about 38.9 min left
+2026-10-15 18:21:10    S1: 54/360 jobs, 6.3 min elapsed, about 35.8 min left
+2026-10-15 18:23:03    S1: 72/360 jobs, 8.2 min elapsed, about 32.7 min left
+2026-10-15 18:24:46    S1: 90/360 jobs, 9.9 min elapsed, about 29.7 min left
+2026-10-15 18:26:35    S1: 108/360 jobs, 11.7 min elapsed, about 27.4 min left
+2026-10-15 18:28:28    S1: 126/360 jobs, 13.6 min elapsed, about 25.3 min left
+2026-10-15 18:30:15    S1: 144/360 jobs, 15.4 min elapsed, about 23.1 min left
+2026-10-15 18:31:58    S1: 162/360 jobs, 17.1 min elapsed, about 20.9 min left
+2026-10-15 18:33:48    S1: 180/360 jobs, 18.9 min elapsed, about 18.9 min left
+2026-10-15 18:35:44    S1: 198/360 jobs, 20.9 min elapsed, about 17.1 min left
+2026-10-15 18:37:32    S1: 216/360 jobs, 22.7 min elapsed, about 15.1 min left
+2026-10-15 18:39:15    S1: 234/360 jobs, 24.4 min elapsed, about 13.1 min left
+2026-10-15 18:41:01    S1: 252/360 jobs, 26.2 min elapsed, about 11.2 min left
+2026-10-15 18:42:50    S1: 270/360 jobs, 28.0 min elapsed, about 9.3 min left
+2026-10-15 18:44:43    S1: 288/360 jobs, 29.9 min elapsed, about 7.5 min left
+2026-10-15 18:46:31    S1: 306/360 jobs, 31.6 min elapsed, about 5.6 min left
+2026-10-15 18:48:13    S1: 324/360 jobs, 33.4 min elapsed, about 3.7 min left
+2026-10-15 18:50:08    S1: 342/360 jobs, 35.3 min elapsed, about 1.9 min left
+2026-10-15 18:51:34    S1: 360/360 jobs, 36.7 min elapsed, about 0.0 min left
+2026-10-15 18:51:34  stage S1 finished: 360 ok, 0 failed, 36.7 min
+2026-10-15 18:51:34  stage X1: 72 jobs, 0 already done, 72 to run (2322 rule-runs)
+2026-10-15 18:56:54    X1: 3/72 jobs, 5.3 min elapsed, about 122.9 min left
+2026-10-15 18:57:07    X1: 6/72 jobs, 5.5 min elapsed, about 61.0 min left
+2026-10-15 18:57:44    X1: 9/72 jobs, 6.2 min elapsed, about 43.2 min left
+2026-10-15 18:57:44    X1: 12/72 jobs, 6.2 min elapsed, about 30.9 min left
+2026-10-15 19:01:34    X1: 15/72 jobs, 10.0 min elapsed, about 38.0 min left
+2026-10-15 19:01:34    X1: 18/72 jobs, 10.0 min elapsed, about 30.0 min left
+2026-10-15 19:01:34    X1: 21/72 jobs, 10.0 min elapsed, about 24.3 min left
+2026-10-15 19:02:11    X1: 24/72 jobs, 10.6 min elapsed, about 21.2 min left
+2026-10-15 19:02:11    X1: 27/72 jobs, 10.6 min elapsed, about 17.7 min left
+2026-10-15 19:02:11    X1: 30/72 jobs, 10.6 min elapsed, about 14.9 min left
+2026-10-15 19:02:58    X1: 33/72 jobs, 11.4 min elapsed, about 13.5 min left
+2026-10-15 19:02:58    X1: 36/72 jobs, 11.4 min elapsed, about 11.4 min left
+2026-10-15 19:02:58    X1: 39/72 jobs, 11.4 min elapsed, about 9.7 min left
+2026-10-15 19:08:02    X1: 42/72 jobs, 16.5 min elapsed, about 11.8 min left
+2026-10-15 19:08:02    X1: 45/72 jobs, 16.5 min elapsed, about 9.9 min left
+2026-10-15 19:08:02    X1: 48/72 jobs, 16.5 min elapsed, about 8.2 min left
+2026-10-15 19:09:26    X1: 51/72 jobs, 17.9 min elapsed, about 7.4 min left
+2026-10-15 19:09:26    X1: 54/72 jobs, 17.9 min elapsed, about 6.0 min left
+2026-10-15 19:09:26    X1: 57/72 jobs, 17.9 min elapsed, about 4.7 min left
+2026-10-15 19:10:42    X1: 60/72 jobs, 19.1 min elapsed, about 3.8 min left
+2026-10-15 19:10:42    X1: 63/72 jobs, 19.1 min elapsed, about 2.7 min left
+2026-10-15 19:14:33    X1: 66/72 jobs, 23.0 min elapsed, about 2.1 min left
+2026-10-15 19:15:47    X1: 69/72 jobs, 24.2 min elapsed, about 1.1 min left
+2026-10-15 19:16:20    X1: 72/72 jobs, 24.8 min elapsed, about 0.0 min left
+2026-10-15 19:16:20  stage X1 finished: 72 ok, 0 failed, 24.8 min
+2026-10-15 19:16:21  stage X2: 72 jobs, 0 already done, 72 to run (984 rule-runs)
+2026-10-15 19:16:23    X2: 3/72 jobs, 0.0 min elapsed, about 1.1 min left
+2026-10-15 19:16:23    X2: 6/72 jobs, 0.0 min elapsed, about 0.5 min left
+2026-10-15 19:16:24    X2: 9/72 jobs, 0.0 min elapsed, about 0.3 min left
+2026-10-15 19:16:24    X2: 12/72 jobs, 0.0 min elapsed, about 0.2 min left
+2026-10-15 19:16:24    X2: 15/72 jobs, 0.0 min elapsed, about 0.2 min left
+2026-10-15 19:16:24    X2: 18/72 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:16:24    X2: 21/72 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:20:11    X2: 24/72 jobs, 3.8 min elapsed, about 7.7 min left
+2026-10-15 19:20:11    X2: 27/72 jobs, 3.8 min elapsed, about 6.4 min left
+2026-10-15 19:20:11    X2: 30/72 jobs, 3.8 min elapsed, about 5.4 min left
+2026-10-15 19:20:21    X2: 33/72 jobs, 4.0 min elapsed, about 4.7 min left
+2026-10-15 19:20:22    X2: 36/72 jobs, 4.0 min elapsed, about 4.0 min left
+2026-10-15 19:20:22    X2: 39/72 jobs, 4.0 min elapsed, about 3.4 min left
+2026-10-15 19:20:51    X2: 42/72 jobs, 4.5 min elapsed, about 3.2 min left
+2026-10-15 19:20:51    X2: 45/72 jobs, 4.5 min elapsed, about 2.7 min left
+2026-10-15 19:23:12    X2: 48/72 jobs, 6.8 min elapsed, about 3.4 min left
+2026-10-15 19:24:20    X2: 51/72 jobs, 8.0 min elapsed, about 3.3 min left
+2026-10-15 19:24:30    X2: 54/72 jobs, 8.2 min elapsed, about 2.7 min left
+2026-10-15 19:24:51    X2: 57/72 jobs, 8.5 min elapsed, about 2.2 min left
+2026-10-15 19:25:33    X2: 60/72 jobs, 9.2 min elapsed, about 1.8 min left
+2026-10-15 19:25:50    X2: 63/72 jobs, 9.5 min elapsed, about 1.4 min left
+2026-10-15 19:26:04    X2: 66/72 jobs, 9.7 min elapsed, about 0.9 min left
+2026-10-15 19:26:21    X2: 69/72 jobs, 10.0 min elapsed, about 0.4 min left
+2026-10-15 19:26:33    X2: 72/72 jobs, 10.2 min elapsed, about 0.0 min left
+2026-10-15 19:26:33  stage X2 finished: 72 ok, 0 failed, 10.2 min
+2026-10-15 19:26:34  stage X3: 180 jobs, 0 already done, 180 to run (1620 rule-runs)
+2026-10-15 19:27:49    X3: 9/180 jobs, 1.3 min elapsed, about 23.8 min left
+2026-10-15 19:28:47    X3: 18/180 jobs, 2.2 min elapsed, about 19.9 min left
+2026-10-15 19:29:28    X3: 27/180 jobs, 2.9 min elapsed, about 16.5 min left
+2026-10-15 19:30:15    X3: 36/180 jobs, 3.7 min elapsed, about 14.7 min left
+2026-10-15 19:30:55    X3: 45/180 jobs, 4.3 min elapsed, about 13.0 min left
+2026-10-15 19:31:35    X3: 54/180 jobs, 5.0 min elapsed, about 11.7 min left
+2026-10-15 19:32:15    X3: 63/180 jobs, 5.7 min elapsed, about 10.5 min left
+2026-10-15 19:32:57    X3: 72/180 jobs, 6.4 min elapsed, about 9.6 min left
+2026-10-15 19:33:38    X3: 81/180 jobs, 7.1 min elapsed, about 8.6 min left
+2026-10-15 19:34:15    X3: 90/180 jobs, 7.7 min elapsed, about 7.7 min left
+2026-10-15 19:34:59    X3: 99/180 jobs, 8.4 min elapsed, about 6.9 min left
+2026-10-15 19:35:42    X3: 108/180 jobs, 9.1 min elapsed, about 6.1 min left
+2026-10-15 19:36:21    X3: 117/180 jobs, 9.8 min elapsed, about 5.3 min left
+2026-10-15 19:36:59    X3: 126/180 jobs, 10.4 min elapsed, about 4.5 min left
+2026-10-15 19:37:37    X3: 135/180 jobs, 11.0 min elapsed, about 3.7 min left
+2026-10-15 19:38:22    X3: 144/180 jobs, 11.8 min elapsed, about 3.0 min left
+2026-10-15 19:39:01    X3: 153/180 jobs, 12.4 min elapsed, about 2.2 min left
+2026-10-15 19:39:42    X3: 162/180 jobs, 13.1 min elapsed, about 1.5 min left
+2026-10-15 19:40:20    X3: 171/180 jobs, 13.8 min elapsed, about 0.7 min left
+2026-10-15 19:40:47    X3: 180/180 jobs, 14.2 min elapsed, about 0.0 min left
+2026-10-15 19:40:47  stage X3 finished: 180 ok, 0 failed, 14.2 min
+2026-10-15 19:40:47  stage O1: 24 jobs, 0 already done, 24 to run (774 rule-runs)
+2026-10-15 19:40:50    O1: 1/24 jobs, 0.0 min elapsed, about 1.0 min left
+2026-10-15 19:40:50    O1: 2/24 jobs, 0.0 min elapsed, about 0.5 min left
+2026-10-15 19:40:50    O1: 3/24 jobs, 0.0 min elapsed, about 0.3 min left
+2026-10-15 19:40:50    O1: 4/24 jobs, 0.0 min elapsed, about 0.2 min left
+2026-10-15 19:40:50    O1: 5/24 jobs, 0.0 min elapsed, about 0.2 min left
+2026-10-15 19:40:50    O1: 6/24 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:40:50    O1: 7/24 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:40:50    O1: 8/24 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:40:50    O1: 9/24 jobs, 0.0 min elapsed, about 0.1 min left
+2026-10-15 19:47:08    O1: 10/24 jobs, 6.3 min elapsed, about 8.9 min left
+2026-10-15 19:47:12    O1: 11/24 jobs, 6.4 min elapsed, about 7.6 min left
+2026-10-15 19:47:39    O1: 12/24 jobs, 6.9 min elapsed, about 6.9 min left
+2026-10-15 19:47:39    O1: 13/24 jobs, 6.9 min elapsed, about 5.8 min left
+2026-10-15 19:47:39    O1: 14/24 jobs, 6.9 min elapsed, about 4.9 min left
+2026-10-15 19:47:39    O1: 15/24 jobs, 6.9 min elapsed, about 4.1 min left
+2026-10-15 19:47:41    O1: 16/24 jobs, 6.9 min elapsed, about 3.4 min left
+2026-10-15 19:47:55    O1: 17/24 jobs, 7.1 min elapsed, about 2.9 min left
+2026-10-15 19:47:55    O1: 18/24 jobs, 7.1 min elapsed, about 2.4 min left
+2026-10-15 19:49:28    O1: 19/24 jobs, 8.7 min elapsed, about 2.3 min left
+2026-10-15 19:49:30    O1: 20/24 jobs, 8.7 min elapsed, about 1.7 min left
+2026-10-15 19:50:02    O1: 21/24 jobs, 9.3 min elapsed, about 1.3 min left
+2026-10-15 19:50:19    O1: 22/24 jobs, 9.5 min elapsed, about 0.9 min left
+2026-10-15 19:53:15    O1: 23/24 jobs, 12.5 min elapsed, about 0.5 min left
+2026-10-15 19:53:31    O1: 24/24 jobs, 12.7 min elapsed, about 0.0 min left
+2026-10-15 19:53:31  stage O1 finished: 24 ok, 0 failed, 12.7 min
+2026-10-15 19:53:31  stage O2: 24 jobs, 0 already done, 24 to run (324 rule-runs)
+2026-10-15 19:53:34    O2: 1/24 jobs, 0.0 min elapsed, about 1.1 min left
+2026-10-15 19:53:34    O2: 2/24 jobs, 0.0 min elapsed, about 0.5 min left
+2026-10-15 19:53:34    O2: 3/24 jobs, 0.1 min elapsed, about 0.4 min left
+2026-10-15 19:53:34    O2: 4/24 jobs, 0.1 min elapsed, about 0.3 min left
+2026-10-15 19:53:34    O2: 5/24 jobs, 0.1 min elapsed, about 0.2 min left
+2026-10-15 19:53:34    O2: 6/24 jobs, 0.1 min elapsed, about 0.2 min left
+2026-10-15 19:53:34    O2: 7/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:53:34    O2: 8/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:53:34    O2: 9/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:53:34    O2: 10/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:53:34    O2: 11/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:53:34    O2: 12/24 jobs, 0.1 min elapsed, about 0.1 min left
+2026-10-15 19:56:51    O2: 13/24 jobs, 3.3 min elapsed, about 2.8 min left
+2026-10-15 19:56:52    O2: 14/24 jobs, 3.3 min elapsed, about 2.4 min left
+2026-10-15 19:56:57    O2: 15/24 jobs, 3.4 min elapsed, about 2.1 min left
+2026-10-15 19:57:02    O2: 16/24 jobs, 3.5 min elapsed, about 1.8 min left
+2026-10-15 19:59:15    O2: 17/24 jobs, 5.7 min elapsed, about 2.4 min left
+2026-10-15 19:59:18    O2: 18/24 jobs, 5.8 min elapsed, about 1.9 min left
+2026-10-15 19:59:26    O2: 19/24 jobs, 5.9 min elapsed, about 1.6 min left
+2026-10-15 19:59:31    O2: 20/24 jobs, 6.0 min elapsed, about 1.2 min left
+2026-10-15 19:59:37    O2: 21/24 jobs, 6.1 min elapsed, about 0.9 min left
+2026-10-15 19:59:40    O2: 22/24 jobs, 6.1 min elapsed, about 0.6 min left
+2026-10-15 19:59:43    O2: 23/24 jobs, 6.2 min elapsed, about 0.3 min left
+2026-10-15 19:59:44    O2: 24/24 jobs, 6.2 min elapsed, about 0.0 min left
+2026-10-15 19:59:44  stage O2 finished: 24 ok, 0 failed, 6.2 min
+2026-10-15 19:59:44  stage O3: 90 jobs, 0 already done, 90 to run (810 rule-runs)
+2026-10-15 20:03:24    O3: 4/90 jobs, 3.7 min elapsed, about 78.9 min left
+2026-10-15 20:03:36    O3: 8/90 jobs, 3.9 min elapsed, about 39.6 min left
+2026-10-15 20:07:02    O3: 12/90 jobs, 7.3 min elapsed, about 47.4 min left
+2026-10-15 20:07:10    O3: 16/90 jobs, 7.4 min elapsed, about 34.3 min left
+2026-10-15 20:07:27    O3: 20/90 jobs, 7.7 min elapsed, about 27.0 min left
+2026-10-15 20:10:45    O3: 24/90 jobs, 11.0 min elapsed, about 30.3 min left
+2026-10-15 20:10:59    O3: 28/90 jobs, 11.2 min elapsed, about 24.9 min left
+2026-10-15 20:14:19    O3: 32/90 jobs, 14.6 min elapsed, about 26.4 min left
+2026-10-15 20:14:31    O3: 36/90 jobs, 14.8 min elapsed, about 22.2 min left
+2026-10-15 20:14:45    O3: 40/90 jobs, 15.0 min elapsed, about 18.8 min left
+2026-10-15 20:18:04    O3: 44/90 jobs, 18.3 min elapsed, about 19.2 min left
+2026-10-15 20:18:20    O3: 48/90 jobs, 18.6 min elapsed, about 16.3 min left
+2026-10-15 20:21:35    O3: 52/90 jobs, 21.8 min elapsed, about 16.0 min left
+2026-10-15 20:21:50    O3: 56/90 jobs, 22.1 min elapsed, about 13.4 min left
+2026-10-15 20:22:17    O3: 60/90 jobs, 22.5 min elapsed, about 11.3 min left
+2026-10-15 20:25:23    O3: 64/90 jobs, 25.6 min elapsed, about 10.4 min left
+2026-10-15 20:25:40    O3: 68/90 jobs, 25.9 min elapsed, about 8.4 min left
+2026-10-15 20:28:46    O3: 72/90 jobs, 29.0 min elapsed, about 7.3 min left
+2026-10-15 20:29:11    O3: 76/90 jobs, 29.5 min elapsed, about 5.4 min left
+2026-10-15 20:29:32    O3: 80/90 jobs, 29.8 min elapsed, about 3.7 min left
+2026-10-15 20:32:33    O3: 84/90 jobs, 32.8 min elapsed, about 2.3 min left
+2026-10-15 20:32:41    O3: 88/90 jobs, 32.9 min elapsed, about 0.7 min left
+2026-10-15 20:32:49    O3: 90/90 jobs, 33.1 min elapsed, about 0.0 min left
+2026-10-15 20:32:49  stage O3 finished: 90 ok, 0 failed, 33.1 min
+2026-10-15 20:32:49  stage S3: 348 jobs, 0 already done, 348 to run (1740 rule-runs)
+2026-10-15 20:34:49    S3: 17/348 jobs, 2.0 min elapsed, about 38.9 min left
+2026-10-15 20:37:11    S3: 34/348 jobs, 4.4 min elapsed, about 40.3 min left
+2026-10-15 20:39:28    S3: 51/348 jobs, 6.6 min elapsed, about 38.7 min left
+2026-10-15 20:41:40    S3: 68/348 jobs, 8.8 min elapsed, about 36.4 min left
+2026-10-15 20:43:40    S3: 85/348 jobs, 10.8 min elapsed, about 33.6 min left
+2026-10-15 20:45:42    S3: 102/348 jobs, 12.9 min elapsed, about 31.1 min left
+2026-10-15 20:47:34    S3: 119/348 jobs, 14.8 min elapsed, about 28.4 min left
+2026-10-15 20:49:11    S3: 136/348 jobs, 16.4 min elapsed, about 25.5 min left
+2026-10-15 20:51:10    S3: 153/348 jobs, 18.3 min elapsed, about 23.4 min left
+2026-10-15 20:53:13    S3: 170/348 jobs, 20.4 min elapsed, about 21.4 min left
+2026-10-15 20:55:08    S3: 187/348 jobs, 22.3 min elapsed, about 19.2 min left
+2026-10-15 20:56:51    S3: 204/348 jobs, 24.0 min elapsed, about 17.0 min left
+2026-10-15 20:58:35    S3: 221/348 jobs, 25.8 min elapsed, about 14.8 min left
+2026-10-15 21:00:40    S3: 238/348 jobs, 27.8 min elapsed, about 12.9 min left
+2026-10-15 21:02:20    S3: 255/348 jobs, 29.5 min elapsed, about 10.8 min left
+2026-10-15 21:04:14    S3: 272/348 jobs, 31.4 min elapsed, about 8.8 min left
+2026-10-15 21:06:01    S3: 289/348 jobs, 33.2 min elapsed, about 6.8 min left
+2026-10-15 21:08:01    S3: 306/348 jobs, 35.2 min elapsed, about 4.8 min left
+2026-10-15 21:09:52    S3: 323/348 jobs, 37.0 min elapsed, about 2.9 min left
+2026-10-15 21:11:43    S3: 340/348 jobs, 38.9 min elapsed, about 0.9 min left
+2026-10-15 21:13:00    S3: 348/348 jobs, 40.2 min elapsed, about 0.0 min left
+2026-10-15 21:13:00  stage S3 finished: 348 ok, 0 failed, 40.2 min
+2026-10-15 21:13:01  stage S2: 144 jobs, 0 already done, 144 to run (6552 rule-runs)
+2026-10-15 21:13:04    S2: 7/144 jobs, 0.1 min elapsed, about 1.0 min left
+2026-10-15 21:13:04    S2: 14/144 jobs, 0.1 min elapsed, about 0.5 min left
+2026-10-15 21:13:04    S2: 21/144 jobs, 0.1 min elapsed, about 0.3 min left
+2026-10-15 21:22:24    S2: 28/144 jobs, 9.4 min elapsed, about 38.9 min left
+2026-10-15 21:23:46    S2: 35/144 jobs, 10.8 min elapsed, about 33.5 min left
+2026-10-15 21:25:49    S2: 42/144 jobs, 12.8 min elapsed, about 31.1 min left
+2026-10-15 21:27:24    S2: 49/144 jobs, 14.4 min elapsed, about 27.9 min left
+2026-10-15 21:32:00    S2: 56/144 jobs, 19.0 min elapsed, about 29.8 min left
+2026-10-15 21:34:08    S2: 63/144 jobs, 21.1 min elapsed, about 27.1 min left
+2026-10-15 21:35:45    S2: 70/144 jobs, 22.7 min elapsed, about 24.0 min left
+2026-10-15 21:39:47    S2: 77/144 jobs, 26.8 min elapsed, about 23.3 min left
+2026-10-15 21:40:48    S2: 84/144 jobs, 27.8 min elapsed, about 19.8 min left
+2026-10-15 21:43:14    S2: 91/144 jobs, 30.2 min elapsed, about 17.6 min left
+2026-10-15 21:45:00    S2: 98/144 jobs, 32.0 min elapsed, about 15.0 min left
+2026-10-15 21:52:18    S2: 105/144 jobs, 39.3 min elapsed, about 14.6 min left
+2026-10-15 21:55:25    S2: 112/144 jobs, 42.4 min elapsed, about 12.1 min left
+2026-10-15 21:59:18    S2: 119/144 jobs, 46.3 min elapsed, about 9.7 min left
+2026-10-15 22:02:14    S2: 126/144 jobs, 49.2 min elapsed, about 7.0 min left
+2026-10-15 22:06:09    S2: 133/144 jobs, 53.1 min elapsed, about 4.4 min left
+2026-10-15 22:09:41    S2: 140/144 jobs, 56.7 min elapsed, about 1.6 min left
+2026-10-15 22:10:06    S2: 144/144 jobs, 57.1 min elapsed, about 0.0 min left
+2026-10-15 22:10:06  stage S2 finished: 144 ok, 0 failed, 57.1 min
+2026-10-15 22:10:06  all stages passed once: 1477 jobs run now, 4.14 h
+2026-10-15 22:10:06  failed jobs: 0
+2026-10-15 22:10:47  analysis written to results/full_ext/analysis

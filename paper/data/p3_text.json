@@ -1,43 +1,94 @@
 {
- "TITLE": "Conditional handover steered by a place-keyed memory of handover outcomes in ultra-dense upper mid-band street networks",
- "ABSTRACT": "In ultra-dense street deployments of the upper mid-band, users cross a cell in seconds and blockage changes abruptly at corners and building edges. Conditional handover (CHO) removes the late handover command, but it still executes into cells that the user soon leaves again. We propose MemCHO, a CHO controller that counts, for every 10 m place and direction of travel, how earlier handovers decided there ended, combines these counts with the predicted path of the user, and sets per user and candidate cell both the preparation threshold and the execution offset that the Rel-16 conditional configuration already carries. We evaluated it in a procedure-level system simulation of a street grid at 10 GHz with sites every 50, 100 and 150 m, against A3 handover, a per-user margin rule and CHO, each tuned with the same budget of 48 settings. Over 360 paired runs MemCHO had 19.7% fewer unnecessary handovers and 57.3% fewer failures than tuned CHO (38.0% and 66.9% fewer than tuned A3), and a 1.0% higher delivered rate. It needed 36.1% more prepared cells and 2.2 times as many measurement reports, so our hypothesis of lower preparation overhead was rejected. At equal failure rate the reduction against CHO was 20–29%. The gain grew as the memory filled and disappeared where blockage was not tied to place: in an open area MemCHO had 22.3% more unnecessary handovers than CHO. Handover rates of the simulator agree with ns-3/5G-LENA; failure rates were not calibrated.",
+ "TITLE": "When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense upper mid-band street networks",
+ "ABSTRACT": "Conditional handover (CHO) lets the user execute a prepared handover on its own, which removes the late handover command but not handovers into cells the user soon leaves. We ask whether a memory of handover outcomes, kept per 10 m place and direction of travel, can steer CHO in ultra-dense street deployments of the upper mid-band. The controller, MemCHO, combines these counts with the predicted path of the user and sets, per user and candidate cell, the preparation threshold and the execution offset that the Rel-16 conditional configuration already carries. We compared it with A3, a per-user margin rule and CHO in a procedure-level simulation of a 10 GHz street grid with sites every 50 to 150 m, all tuned with the same budget. A first run favoured MemCHO, but the tuned baselines sat at the edge of their tuning grids; with wider grids the result reversed. Over 360 paired runs MemCHO had 52.8% more unnecessary handovers than tuned CHO, which also stayed ahead at equal failure rate. MemCHO settled instead at a low-failure operating point: 88.9% fewer failures than CHO and 77.2% fewer than A3, a 21.7% smaller prepared set and a 2.9% higher delivered rate. Without beam isolation, where interference is strongest, the memory also cut unnecessary handovers (16.6% fewer than CHO, with 58.6% fewer failures) at the cost of 85.2% more prepared cells; in an open area it did not help. Handover rates of the simulator agree with ns-3/5G-LENA; failure rates were not calibrated.",
  "KEYWORDS": [
   "Conditional handover",
   "Mobility robustness",
   "Unnecessary handover",
   "Handover failure",
   "Upper mid-band",
-  "Ultra-dense network",
+  "Baseline tuning",
   "System-level simulation"
  ],
  "HIGHLIGHTS": [
-  "A place-keyed memory of handover outcomes sets CHO candidates and offsets per user",
-  "Against tuned CHO: 20% fewer unnecessary handovers, 57% fewer failures",
-  "The price: 36% more prepared cells and 2.2 times the measurement reports",
-  "Open area, nothing tied to place: 22% more unnecessary handovers than CHO",
-  "All methods tuned with one budget; 2,382 simulation jobs; code and data are public"
+  "A place-keyed outcome memory steers conditional handover per user and candidate",
+  "With fully tuned baselines, CHO has fewer unnecessary handovers than the memory",
+  "The memory gives a low-failure point: 89% fewer failures, 22% fewer prepared cells",
+  "Without beam isolation it also cuts unnecessary handovers by 17% against CHO",
+  "Baselines at the edge of their tuning grid had produced a gain that was not there"
  ],
- "nWords": 242,
+ "nWords": 247,
  "JOURNAL": "Computer Networks",
  "num": {
-  "uho": -19.72849412203769,
-  "fail": -57.31707317073172,
-  "prep": 36.11599863674419,
-  "deliv": 0.9781337203916207,
-  "uhoA3": -38.02350186844357,
-  "failA3": -66.91424713031736,
-  "rep": 2.206973794978721,
-  "eqLo": 20.384393619065925,
-  "eqHi": 29.20230821452817,
-  "open": 22.31958135572593,
-  "xU": -36.103342024176335,
-  "xF": -28.352234823215476,
-  "pumA": 30.31921120165684,
-  "place0": 17.723342939481263,
-  "place50": 8.459642637091807,
+  "uho": 52.801704999555994,
+  "fail": -88.90398550724639,
+  "prep": -21.677328967632427,
+  "rate": 2.8624722967941,
+  "deliv": 2.856226891870269,
+  "uhoA3": -2.9279025160780776,
+  "failA3": -77.23048327137546,
+  "rep": 1.5709001524794886,
+  "eqLo": 52.816550348953136,
+  "eqHi": 61.59725882973116,
+  "open": 620.0888379423989,
+  "openF": -66.66062889436314,
+  "xU": -16.616145994432415,
+  "xF": -58.59676175790286,
+  "xP": 85.16597083187273,
+  "uho0": -19.72849412203769,
+  "fail0": -57.31707317073172,
+  "prep0": 36.11599863674419,
+  "uhoA30": -38.02350186844357,
+  "choUho": 0.20853703703703702,
+  "choUho0": 0.39696296296296296,
+  "memUho": 0.3186481481481481,
+  "choFail": 0.020444444444444446,
+  "memFail": 0.0022685185185185182,
+  "pumA": 104.11542367144305,
+  "place0": 69.05690409868683,
+  "base3": 41.246476667710645,
   "exM": 0.26405555555555554,
   "mcM": 0.3186481481481481,
-  "nJobs": 2382,
-  "nPairs": 360
+  "nJobs": 1638,
+  "nJobs0": 2382,
+  "nPairs": 360,
+  "choTest100": 0.04977777777777778,
+  "bud100": 0.011666666666666667,
+  "val100": 0.007777777777777777,
+  "edges": [
+   {
+    "env": "street grid, $χ$ = 0.3",
+    "d": "100",
+    "at": [
+     "o_prep",
+     "ttt_exec"
+    ],
+    "s": {
+     "rule": "cho",
+     "name": "cho/r2-08",
+     "o_prep": 4,
+     "o_exec": 6,
+     "ttt_exec": 1.28,
+     "n_max": 2,
+     "rel_hys": 2
+    }
+   },
+   {
+    "env": "open area",
+    "d": "100",
+    "at": [
+     "o_exec"
+    ],
+    "s": {
+     "rule": "cho",
+     "name": "cho/r2-07",
+     "o_prep": 0,
+     "o_exec": 16,
+     "ttt_exec": 0.32,
+     "n_max": 1,
+     "rel_hys": 2
+    }
+   }
+  ]
  }
 }

@@ -13,7 +13,7 @@ from collections import defaultdict
 HERE = os.path.dirname(os.path.abspath(__file__))
 G6 = os.path.dirname(HERE)
 # results of the full study: results/full (repository layout) or results/full_i9/results/full (as returned from the run machine)
-RES = next(p for p in (os.path.join(G6, "results", "full"), os.path.join(G6, "results", "full_i9", "results", "full")) if os.path.isdir(p))
+RES = os.path.join(G6, "results", "full_ext")     # amendment 2: baselines retuned on extended grids (the results reported)
 ANA = os.path.join(RES, "analysis")
 SURVEY = os.environ.get("P3_SURVEY", os.path.join(HERE, "data", "survey_2026.csv"))      # 15 handover studies of 2026, read in full
 OUT = os.path.join(HERE, "data")
@@ -121,8 +121,10 @@ from bh6.params import Scenario
 from bh6 import study, policies, services, mobility
 import inspect
 out["scenario"] = Scenario().to_dict()
-out["design"] = {k: (list(v) if isinstance(v, tuple) else v) for k, v in study.DESIGNS["full"].items()}
-out["grids"] = {m: dict(label=v["label"], grid={k: list(g) for k, g in v["grid"].items()}, fixed=v.get("fixed", {})) for m, v in study.METHODS.items()}
+out["design"] = {k: (list(v) if isinstance(v, tuple) else v) for k, v in study.DESIGNS["full_ext"].items() if k != "base"}
+out["grids"] = {m: dict(label=v["label"], grid={k: list(g) for k, g in study.grid_of(m, "full_ext").items()}, fixed=v.get("fixed", {}))
+                for m, v in study.METHODS.items()}
+out["grids_before"] = {m: {k: list(g) for k, g in study.grid_of(m, "full").items()} for m in ("a3", "cho")}
 out["sens"] = {k: v for k, v in study.SENS.items()}
 mc = inspect.signature(policies.MemCho.__init__).parameters
 out["memcho_const"] = dict(O_LO=policies.MemCho.O_LO, O_HI=policies.MemCho.O_HI, REP_CAP=policies.MemCho.REP_CAP,

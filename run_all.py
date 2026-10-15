@@ -30,6 +30,10 @@ from bh6 import study
 from bh6.backend import resolve_device
 
 LOG = None
+# share of the rule-runs that must be simulated when only the A3 and CHO rows are new (design full_ext);
+# used for stages whose job list is not known yet
+NEW_SHARE = {"T1": 2 / 9.0, "T2": 2 / 9.0, "S1": 4 / 19.0, "X1": 0.5, "X2": 0.5, "X3": 4 / 9.0, "O1": 0.5, "O2": 0.5,
+             "O3": 4 / 9.0, "S2": 0.5, "S3": 0.4}
 SMOKE_SCALE = 2.0     # cost per simulated second of a full-design rule-run relative to a smoke rule-run
                       # (60 instead of 20 users, more sites, more learning rules); measured on the development server
 
@@ -85,7 +89,11 @@ def measured_rate(outdir):
 def status(design, outdir, stages, workers):
     info = scan(design, outdir, stages)
     per_run, per_job = measured_rate(outdir)
+    reuse = bool(study.DESIGNS[design].get("base"))
     print("design: %s    results: %s" % (design, outdir))
+    if study.DESIGNS[design].get("base"):
+        b = study._base_dir(design)
+        print("rows of unchanged rules are reused from: %s" % (b if b else "NOT FOUND (the run would stop)"))
     print("%-5s %8s %8s %8s %10s %12s" % ("stage", "jobs", "done", "failed", "rule-runs", "hours left"))
     left_total = 0.0
     for st in stages:
@@ -95,9 +103,13 @@ def status(design, outdir, stages, workers):
             nj = len(jobs); nr = sum(len(j["specs"]) for j in jobs)
             ids = {j["id"] for j in done}
             rem_jobs = [j for j in jobs if j["id"] not in ids]
-            rem_runs = sum(len(j["specs"]) for j in rem_jobs)
+            if reuse:                                   # rows taken from the base run cost nothing
+                rem_runs = sum(len(j["specs"]) - len(study._reusable(design, j, study.make_scenario(design, j["env"], j["sc"])))
+                               for j in rem_jobs)
+            else:
+                rem_runs = sum(len(j["specs"]) for j in rem_jobs)
         else:
-            rem_jobs, rem_runs = None, nr
+            rem_jobs, rem_runs = None, nr * (NEW_SHARE.get(st, 1.0) if reuse else 1.0)
         if per_run is not None:
             h = (rem_runs * per_run + (len(rem_jobs) if rem_jobs is not None else nj) * per_job) / 3600.0 / max(workers, 1)
             left_total += h
@@ -136,7 +148,7 @@ def run_stage(st, design, outdir, workers, device):
     t0 = time.time()
     n_ok = n_bad = 0
     # the longest jobs first, so that the tail of a stage is short
-    todo.sort(key=lambda j: -len(j["specs"]))
+    todo.sort(key=lambda j: (-len(j["specs"]), j.get("seed", 0)))    # equal jobs seed by seed: a partial stage has whole seeds
     for attempt in (1, 2):
         if not todo:
             break
@@ -200,6 +212,13 @@ def main():
         return 0
     os.makedirs(outdir, exist_ok=True)
     LOG = os.path.join(outdir, "run_all.log")
+    if study.DESIGNS[design].get("base"):
+        base = study._base_dir(design)
+        if base is None:
+            log("design %s reuses the rows of a finished run, but none of %s exists here (or set BH6_BASE). Stopped." %
+                (design, ", ".join(study.DESIGNS[design]["base"])))
+            return 2
+        log("rows of unchanged rules are reused from %s" % base)
     device = resolve_device(a.device)
     done_flag = os.path.join(outdir, "RUN_ALL_DONE")
     if os.path.exists(done_flag):

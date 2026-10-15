@@ -297,3 +297,38 @@ Changes after the plan was first written:
   discarded. Rules, labels, environment assumptions and the selection rule are those of this plan.
   It is not the study: its numbers do not enter the manuscript as results and no hypothesis,
   grid, endpoint or stage of this plan was changed because of it.
+* 15 October 2026, **amendment 2, made after the full run had finished and been read** (design
+  `full_ext`, results in `results/full_ext/`). Found after the full run: the selected A3 offset
+  (8 dB) and the selected CHO execution offset (8 dB) were at the top of their grids at all three
+  site distances in the street grid and in the open area, and the selected CHO preparation offset
+  (0 dB) was at the top of its grid everywhere, as was the CHO execution time-to-trigger (0.32 s)
+  in most cases; MemCHO's execution offset could reach 12 dB
+  through its weights. The baseline tuning may therefore not have converged, which would favour
+  MemCHO. Change: the A3 offset grid and the CHO execution offset grid are extended from
+  0-8 dB to 0-16 dB (continuing the 2 dB step above 6 dB: 10, 12, 14, 16 dB), and the CHO
+  preparation offset grid from -6..0 dB to -6..+4 dB (same 2 dB step), and the CHO execution
+  time-to-trigger grid from 0-0.32 s to 0-1.28 s (continuing the doubling step: 0.64 and 1.28 s,
+  both values of the standard's TimeToTrigger list). The A3 time-to-trigger grid (0-0.64 s) is
+  unchanged: no selected A3 setting was at its top; several were at 0 s, which is a natural floor,
+  as is the prepared-set limit of 1, at which the selected CHO settings mostly sat. Prepared-set
+  limits and release hysteresis are unchanged. The tuning procedure is unchanged:
+  32 random + 16 refinement settings per method, so the budget per method stays 48 and equal for
+  all methods; only the A3 and CHO draws change because their grids are larger. MemCHO, the
+  ablations, the per-user margin, the reference A3 (which sets the failure budget), labels,
+  environment and selection rule are unchanged. Rerun: the A3 and CHO tuning in T1/T2, X1/X2,
+  O1/O2; their frozen settings in S1, X3, O3 and S3; their settings in S2. All other rows are
+  taken unchanged from the full run on the same jobs (same stage, condition and seed): a row is
+  reused only if the stored scenario is identical and the rule had exactly the same setting.
+  This relies on runs being deterministic per seed across machines, which was checked by
+  recomputing stored rows of the full run on the development server (result in the report of
+  amendment 2). Where a newly tuned baseline equals its old setting, the old row is reused too.
+  Results before and after the amendment are both reported. Hypotheses are unchanged.
+  Reduction of the rerun, decided on 15 October 2026 before any result of the rerun was seen, so
+  that it finishes on the development server in about a day instead of about 30 h: T1, T2, S1,
+  X1-X3 and O1-O3 are rerun in full. S2 (all tuned settings on test seeds, descriptive) is rerun on
+  the first third of its seeds (1-4 of 1-12, every condition); S3 on ten of its 23 variants, those
+  behind the claims about where the scheme stops working and how robust it is: place-tied share
+  0.5 and 0, no clutter, isolation 0.1 and 1, 30 m/s, carrier 7 and 15 GHz, position error 15 m,
+  long runs. In S2 and S3 the comparisons after the amendment use only these seeds and variants;
+  the full S2 and S3 of the original run stay reported as they were (with the old baseline
+  settings).

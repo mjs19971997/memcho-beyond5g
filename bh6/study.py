@@ -51,6 +51,8 @@ DESIGNS = {
                  open_isds=(100,), open_test_seeds=tuple(range(1, 31)), x_test_seeds=tuple(range(1, 21)),
                  front_seeds=tuple(range(1, 13)), sens_seeds=tuple(range(1, 13)),
                  sens_cells=((100, "veh16"), (100, "ped"), (50, "veh16")), ablations=ABLATIONS, long_t=1980.0),
+    # amendment 2: the full design again with extended A3 / CHO grids; rows of all other rules are taken
+    # unchanged from the finished full run in "base" (reused only where the rule and the world are identical)
     # preliminary answer on the development server (13 October 2026): street grid at 100 m, both interference
     # settings, the four main methods, reduced tuning (18 instead of 48 settings, 3 validation traces), 7 test seeds.
     # A size option only: rules, labels, environment and selection are those of the full design.
@@ -98,6 +100,25 @@ METHODS = {
     "mc_pair": dict(rule="memcho", label="cell-pair memory (no place)", grid=dict(_CHO, **_W, **_V), fixed=dict(place=False)),
 }
 
+# Amendment 2 (PLAN.md, 15 October 2026): after the full run the tuned A3 offset and the tuned CHO execution
+# and preparation offsets and the CHO execution time-to-trigger sat at the top of their grids.  Design "full_ext"
+# extends these ranges (same steps; same 32 + 16 settings per method); every other method keeps its grid.
+GRID_EXT = {
+    "a3": dict(off=(0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0)),
+    "cho": dict(o_prep=(-6.0, -4.0, -2.0, 0.0, 2.0, 4.0),
+                o_exec=(0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0),
+                ttt_exec=(0.0, 0.04, 0.08, 0.16, 0.32, 0.64, 1.28)),
+}
+
+
+def grid_of(method, design):
+    """Tuning grid of a method in a design (the extended grids apply only where the design asks for them)."""
+    g = dict(METHODS[method]["grid"])
+    if DESIGNS.get(design, {}).get("grid_ext"):
+        g.update(GRID_EXT.get(method, {}))
+    return g
+
+
 # sensitivity variants: scenario overrides, or overrides of the memcho rule ("rule")
 SENS = {
     "fc7": dict(sc=dict(radio__fc_ghz=7.0)), "fc15": dict(sc=dict(radio__fc_ghz=15.0)),
@@ -114,6 +135,18 @@ SENS = {
     "pos5": dict(rule=dict(pos_err=5.0)), "pos15": dict(rule=dict(pos_err=15.0)), "head05": dict(rule=dict(head_err=0.5)),
     "long": dict(sc=dict(t_sim="long_t")),
 }
+
+
+DESIGNS["full_ext"] = dict(DESIGNS["full"], grid_ext=True,
+                           # finished full run whose rows are reused: the first of these folders (relative to the
+                           # project) that holds tuned_grid.json; the environment variable BH6_BASE overrides them
+                           base=(os.path.join("results", "full_i9", "results", "full"), os.path.join("results", "full")),
+                           stages=("T1", "T2", "S1", "X1", "X2", "X3", "O1", "O2", "O3", "S3", "S2"),
+                           # reduced to fit the development server (PLAN.md, amendment 2): S2 on the first third of
+                           # its seeds, S3 on the variants behind the paper's claims
+                           front_seeds=(1, 2, 3, 4),
+                           sens_only=("place0", "place50", "noclutter", "chi010", "chi100", "veh30", "fc7", "fc15",
+                                      "pos15", "long"))
 
 
 def base_scenario(design, env):
@@ -145,9 +178,9 @@ def _key(cfg):
     return tuple(sorted(cfg.items()))
 
 
-def round1(method, n):
+def round1(method, n, design="full"):
     """The first ``n`` settings of a method: a seeded random sample of its grid without repetition."""
-    grid = METHODS[method]["grid"]
+    grid = grid_of(method, design)
     rng = random.Random("round1-" + method)
     size = 1
     for v in grid.values():
@@ -161,9 +194,9 @@ def round1(method, n):
     return out
 
 
-def round2(method, best, taken, n, tag):
+def round2(method, best, taken, n, tag, design="full"):
     """``n`` new settings around ``best``: one grid step along one coordinate, then along two."""
-    grid = METHODS[method]["grid"]
+    grid = grid_of(method, design)
     rng = random.Random("round2-%s-%s" % (method, tag))
     seen = {_key(c) for c in taken}
     names = sorted(grid)
@@ -265,7 +298,7 @@ def _tune_jobs(design, env, rnd, outdir):
             return None
     for isd in isds_of(design, env):
         for method in methods_of(design, env):
-            first = round1(method, d["n1"])
+            first = round1(method, d["n1"], design)
             if rnd == 1:
                 specs = [_spec(method, c, "%s/%02d" % (method, i)) for i, c in enumerate(first)]
                 if method == "a3":
@@ -274,7 +307,7 @@ def _tune_jobs(design, env, rnd, outdir):
                 budget = tab1[(isd, "a3", REF_A3["name"])]["fail"]
                 cands = [tab1[(isd, method, "%s/%02d" % (method, i))] for i in range(len(first))]
                 i_best, _ = select(cands, budget)
-                new = round2(method, first[i_best], first, d["n2"], "%s-%s" % (env, isd))
+                new = round2(method, first[i_best], first, d["n2"], "%s-%s" % (env, isd), design)
                 specs = [_spec(method, c, "%s/r2-%02d" % (method, i)) for i, c in enumerate(new)]
             if not specs:
                 continue
@@ -424,6 +457,93 @@ def planned_count(stage, design):
 
 
 # ----------------------------------------------------------------------------
+# reuse of a finished base run (design "full_ext")
+# ----------------------------------------------------------------------------
+_OLD_SPECS = {}
+
+
+def _base_dir(design):
+    """Folder of the finished run whose rows ``design`` may reuse (None if the design reuses nothing)."""
+    b = DESIGNS.get(design, {}).get("base")
+    if not b:
+        return None
+    if os.environ.get("BH6_BASE"):
+        return os.environ["BH6_BASE"]
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for c in ((b,) if isinstance(b, str) else b):
+        d = os.path.join(root, c)
+        if os.path.exists(os.path.join(d, "tuned_grid.json")):
+            return d
+    return None
+
+
+def _old_tn(design, env):
+    """Frozen-settings file of the base run for an environment (None if missing)."""
+    key = (design, env)
+    if key not in _OLD_SPECS:
+        try:
+            with open(os.path.join(_base_dir(design), "tuned_%s.json" % env), "r", encoding="utf-8") as f:
+                _OLD_SPECS[key] = json.load(f)
+        except (OSError, ValueError, TypeError):
+            _OLD_SPECS[key] = None
+    return _OLD_SPECS[key]
+
+
+def _old_spec_of(design, env, isd, name, variant):
+    """The setting that rule ``name`` had in the base run at site distance ``isd`` (None if unknown)."""
+    tn = _old_tn(design, env)
+    if name == REF_A3["name"]:
+        return {k: v for k, v in REF_A3.items() if k != "name"}
+    if tn is None or str(isd) not in tn["isd"]:
+        return None
+    meth = name.split("@")[0].split("/")[0]
+    mn = tn["isd"][str(isd)]["methods"].get(meth)
+    if mn is None:
+        return None
+    if "@" in name:
+        spec = dict(mn[name.split("@")[1]]["spec"])
+    else:
+        spec = next((dict(s_["spec"]) for s_ in mn["settings"] if s_["name"] == name), None)
+        if spec is None:
+            return None
+    spec.pop("name", None)
+    over = SENS.get(variant, {}).get("rule") if variant else None
+    if over and spec.get("rule") == "memcho":
+        spec.update(over)
+    return spec
+
+
+def _reusable(design, job, sc):
+    """Stored results of the base run that may be reused for this job.
+
+    A row is reused only if the base run has a result file for the same job
+    (same stage, world and seed), its stored scenario equals this one, and the
+    rule of that name had exactly the setting it has now.  Determinism per
+    seed makes such a row identical to a new simulation (checked, see PLAN.md).
+    """
+    bdir = _base_dir(design)
+    if not bdir:
+        return {}
+    try:
+        with open(os.path.join(bdir, "jobs", job["stage"], job["id"] + ".json"), "r", encoding="utf-8") as f:
+            old = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    if old.get("scenario") != json.loads(json.dumps(sc.to_dict())):
+        return {}
+    stored = dict(zip(old["names"], old["results"]))
+    out = {}
+    for s_ in job["specs"]:
+        nm = s_["name"]
+        if nm not in stored:
+            continue
+        prev = _old_spec_of(design, job["env"], job["isd"], nm, job.get("variant"))
+        if prev is not None and _key(prev) == _key({k: v for k, v in s_.items() if k != "name"}):
+            out[nm] = stored[nm]
+    return out
+
+
+# ----------------------------------------------------------------------------
 # running one job (called in a worker process)
 # ----------------------------------------------------------------------------
 def run_job(job, design, outdir, device="auto"):
@@ -435,7 +555,32 @@ def run_job(job, design, outdir, device="auto"):
         from .sim import run_rules
         sc = make_scenario(design, job["env"], job["sc"])
         timing = {}
-        res, engines = run_rules(sc, job["specs"], ops=choose_ops(device), log_events=job.get("events", False), timing=timing)
+        specs = job["specs"]
+        reuse = _reusable(design, job, sc)                  # name -> stored result of an identical rule on the same world
+        uniq, slot = [], []                                 # rules to simulate, identical settings only once
+        for s_ in specs:
+            if s_["name"] in reuse:
+                slot.append(None)
+                continue
+            k = _key({a: b for a, b in s_.items() if a != "name"})
+            for i, u in enumerate(uniq):
+                if _key({a: b for a, b in u.items() if a != "name"}) == k:
+                    slot.append(i)
+                    break
+            else:
+                uniq.append(s_)
+                slot.append(len(uniq) - 1)
+        engines = []
+        if uniq:
+            res_u, engines = run_rules(sc, uniq, ops=choose_ops(device), log_events=job.get("events", False), timing=timing)
+        res = []
+        for s_, i in zip(specs, slot):
+            if i is None:
+                res.append(reuse[s_["name"]])
+            else:
+                r = dict(res_u[i])
+                r["rule"] = s_["name"]
+                res.append(r)
         path = job_path(outdir, job)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         if job.get("events"):
@@ -444,14 +589,23 @@ def run_job(job, design, outdir, device="auto"):
             tmp = os.path.join(edir, job["id"] + ".csv.gz.tmp")
             with gzip.open(tmp, "wt", encoding="utf-8", newline="") as f:
                 f.write("rule," + ",".join(EVENT_FIELDS) + "\n")
-                for spec, e in zip(job["specs"], engines):
-                    if spec["name"].endswith("@std") and spec["name"].split("@")[0] in MAIN:
-                        for row in e.log:
-                            f.write(spec["name"] + "," + ",".join(str(x) for x in row) + "\n")
+                for spec, e in zip(uniq, engines):
+                    names = [s_["name"] for s_, i in zip(specs, slot) if i is not None and uniq[i] is spec]
+                    for nm in names:
+                        if nm.endswith("@std") and nm.split("@")[0] in MAIN:
+                            for row in e.log:
+                                f.write(nm + "," + ",".join(str(x) for x in row) + "\n")
+                old_ev = os.path.join(_base_dir(design), "events", job["stage"], job["id"] + ".csv.gz") if reuse else ""
+                if old_ev and os.path.exists(old_ev):            # event rows of the reused rules
+                    with gzip.open(old_ev, "rt", encoding="utf-8") as g:
+                        next(g, None)
+                        for line in g:
+                            if line.split(",", 1)[0] in reuse:
+                                f.write(line)
             os.replace(tmp, tmp[:-4])
         meta = {k: job[k] for k in ("id", "stage", "env", "isd", "profile", "seed", "method", "variant", "sc")}
-        out = dict(job=meta, names=[s["name"] for s in job["specs"]], results=res, timing=timing,
-                   scenario=sc.to_dict(), wall_s=time.perf_counter() - t0)
+        out = dict(job=meta, names=[s_["name"] for s_ in specs], results=res, timing=timing,
+                   scenario=sc.to_dict(), wall_s=time.perf_counter() - t0, reused=sorted(reuse))
         with open(path + ".tmp", "w", encoding="utf-8") as f:
             json.dump(out, f)
         os.replace(path + ".tmp", path)

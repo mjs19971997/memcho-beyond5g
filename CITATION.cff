@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software or these results, please cite them as below. The reference of the accompanying article will be added when it is published."
-title: "MemCHO: conditional handover steered by a place-keyed memory of handover outcomes (simulator, scripts and results)"
+title: "MemCHO: when does a place-keyed memory of handover outcomes help conditional handover? (simulator, scripts and results)"
 type: software
 license: MIT
 repository-code: "https://github.com/mjs19971997/memcho-beyond5g"
@@ -25,4 +25,5 @@ keywords:
   - unnecessary handover
   - upper mid-band
   - ultra-dense network
+  - baseline tuning
   - system-level simulation

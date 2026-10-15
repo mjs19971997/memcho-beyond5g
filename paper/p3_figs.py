@@ -16,7 +16,7 @@ from figstyle import WF, INK, MUTE, LIGHT, OI, METH, LAB, COL, MK, style, panel,
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 G6 = os.path.dirname(HERE)
-ANA = next(p for p in (os.path.join(G6, "results", "full", "analysis"), os.path.join(G6, "results", "full_i9", "results", "full", "analysis")) if os.path.isdir(p))
+ANA = os.path.join(G6, "results", "full_ext", "analysis")      # amendment 2 (extended baseline grids)
 R = json.load(open(os.path.join(ANA, "report.json"), encoding="utf-8"))
 D = json.load(open(os.path.join(HERE, "data", "p3.json"), encoding="utf-8"))
 sys.path.insert(0, G6)
@@ -241,14 +241,16 @@ def fig_time():
 # ------------------------------------------------------------------------------------------------ 8 sensitivities
 def fig_sens():
     S3, B = R["S3"], D["s3_base"]
-    items = [("ref", "reference: main settings")] + [(v, SENS_LAB[v]) for _, vs in SENS_ORDER for v in vs]
-    fig, axs = newfig(165, 104, 1, 2, sharey=True, gridspec_kw=dict(width_ratios=[1.25, 1.0]))
+    order = [(g, [v for v in vs if v in S3]) for g, vs in SENS_ORDER]
+    order = [(g, vs) for g, vs in order if vs]
+    items = [("ref", "reference: main settings")] + [(v, SENS_LAB[v]) for _, vs in order for v in vs]
+    fig, axs = newfig(165, 22 + 3.6 * len(items) + 2.2 * len(order), 1, 2, sharey=True, gridspec_kw=dict(width_ratios=[1.25, 1.0]))
     y = []; yy = 0.0; grp = []
     for i, (k, _) in enumerate(items):
-        if i == 1 or k in [vs[0] for _, vs in SENS_ORDER[1:]]:
+        if i == 1 or k in [vs[0] for _, vs in order[1:]]:
             yy += 0.6
         y.append(-yy); yy += 1
-    for k, lab in [(vs[0], g) for g, vs in SENS_ORDER]:
+    for k, lab in [(vs[0], g) for g, vs in order]:
         grp.append((y[[q[0] for q in items].index(k)], lab))
     for ax, let, kind in ((axs[0], "a", "uho"), (axs[1], "b", "fail")):
         style(ax, "x")
@@ -271,8 +273,10 @@ def fig_sens():
     axs[0].set_yticks(y); axs[0].set_yticklabels([lab for _, lab in items])
     for yv, g in grp:
         axs[0].text(-0.02, yv + 0.75, g, transform=axs[0].get_yaxis_transform(), ha="right", va="center", fontsize=7.2, style="italic", color=MUTE)
-    axs[0].set_xlabel("MemCHO against CHO: unnecessary HO, change [%]")
-    axs[1].set_xlabel(r"MemCHO $-$ CHO: failures per UE-min ($\times10^{-3}$)")
+    axs[0].set_xlabel("MemCHO vs CHO: unnecessary HO, change [%]")
+    axs[1].set_xscale("symlog", linthresh=10.0)
+    axs[1].set_xlim(None, 3.0)
+    axs[1].set_xlabel(r"MemCHO $-$ CHO: failures ($\times10^{-3}$/UE-min)")
     panel(axs[0], "a"); panel(axs[1], "b")
     savefig(fig, "fig_sens")
 
