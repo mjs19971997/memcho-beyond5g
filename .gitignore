@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+paper/out/
+paper/figures/*.svg
+*.tmp
+g6study_outputs*.zip
+results/smoke/
