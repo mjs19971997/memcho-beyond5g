@@ -1,0 +1,23 @@
+{
+ "jobs": [
+  {
+   "id": "T1_grid_d150_veh16_s9002_cho",
+   "rules": 32,
+   "numeric_fields": 1984,
+   "count_fields": 832,
+   "count_fields_differing": 0,
+   "max_abs_diff": 8.881784197001252e-14,
+   "max_rel_diff": 3.5303566121085343e-15
+  }
+ ],
+ "note": "Cross-machine determinism from existing results only (no new simulation).",
+ "summary": {
+  "jobs": 1,
+  "rules": 32,
+  "numeric_fields": 1984,
+  "count_fields": 832,
+  "count_fields_differing": 0,
+  "max_abs_diff": 8.881784197001252e-14,
+  "max_rel_diff": 3.5303566121085343e-15
+ }
+}

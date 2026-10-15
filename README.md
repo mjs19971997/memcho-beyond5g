@@ -28,7 +28,8 @@ second run. MemCHO against tuned CHO, relative change of the pooled means:
 
 * Main test: tuned CHO has fewer unnecessary handovers than MemCHO, also at every equal-failure level of stage S2
   (MemCHO 52.8 to 61.6 % more). The main hypothesis (fewer unnecessary handovers than tuned CHO) is rejected.
-* MemCHO is a low-failure operating point: -88.9 % failures against CHO and -77.2 % against A3, a
+* MemCHO is a low-failure operating point: -88.9 % failures against CHO (-46.2 % without the 100 m
+  deployment, where the tuned CHO setting exceeded its failure budget on the test seeds) and -77.2 % against A3, a
   21.7 % smaller prepared set, 2.9 % more delivered rate, 1.6 times the measurement reports.
 * Without beam isolation (chi = 1) the memory lowers unnecessary handovers and failures together, at the cost of more
   prepared cells. In the open area it does not help with unnecessary handovers.
@@ -41,7 +42,8 @@ second run. MemCHO against tuned CHO, relative change of the pooled means:
   (`calibration_report.txt`); its failure rates are not calibrated. CHO is not available in ns-3 / 5G-LENA, so MemCHO
   itself has no confirmation in a standard simulator.
 
-All jobs of both runs finished; none failed. Note: the first line of `results/full_ext/analysis/report.txt` calls the
+All jobs of both runs finished; none failed. Rows of unchanged rules in the second run were reused from the first; jobs that the
+development server and the second machine computed independently agree to floating-point rounding (`results/DETERMINISM.md`). Note: the first line of `results/full_ext/analysis/report.txt` calls the
 design a test because `analyze.py` labels every design other than `full` that way; `full_ext` is the full study with
 widened baseline grids.
 

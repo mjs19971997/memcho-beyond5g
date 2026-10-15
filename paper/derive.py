@@ -64,6 +64,26 @@ out["s3_base"] = dict(n=len(pairs), uho_cho=mu_c, uho_mem=mu_m, rel_pct=100 * (m
                       p=float(stats.wilcoxon(d_u).pvalue), fail_cho=np.mean([float(p["cho@std"]["fail_pm"]) for p in pairs]),
                       fail_mem=np.mean([float(p["memcho@std"]["fail_pm"]) for p in pairs]), fail_diff=tci(d_f))
 
+# MemCHO against CHO per site distance (main test), and pooled without 100 m, where the tuned CHO setting exceeded its
+# failure budget on the test seeds
+pairs_s1 = defaultdict(dict)
+for r in rows:
+    if r["stage"] == "S1" and r["rule"] in ("cho@std", "memcho@std"):
+        pairs_s1[(int(r["isd"]), r["profile"], int(r["seed"]))][r["rule"]] = r
+
+
+def paired(keys, k):
+    a = [float(pairs_s1[q]["cho@std"][k]) for q in keys]; b = [float(pairs_s1[q]["memcho@std"][k]) for q in keys]
+    d = [y - x for x, y in zip(a, b)]
+    c = tci(d); ma, mb = float(np.mean(a)), float(np.mean(b))
+    nz = [x for x in d if x != 0]
+    return dict(n=len(d), cho=ma, mem=mb, rel_pct=100 * (mb - ma) / ma if ma else float("nan"), diff=c["mean"], lo=c["lo"], hi=c["hi"],
+                p=float(stats.wilcoxon(nz).pvalue) if len(nz) > 1 else 1.0)
+
+
+out["by_isd"] = {str(d): {k: paired([q for q in pairs_s1 if q[0] == d], k) for k in ("uho_pm", "fail_pm", "prep_mean")} for d in (50, 100, 150)}
+out["excl100"] = {k: paired([q for q in pairs_s1 if q[0] != 100], k) for k in ("uho_pm", "fail_pm", "prep_mean")}
+
 # ------------------------------------------------------------------ memory over time (event logs, S1 seeds 1-10)
 WIN = 6
 edges = np.linspace(60.0, 660.0, WIN + 1)
