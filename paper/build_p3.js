@@ -1,4 +1,4 @@
-// Third paper: when does a place-keyed memory of handover outcomes help conditional handover?
+// Third paper: place-keyed outcome memory for conditional handover in ultra-dense beyond-5G networks.
 // Every number in the text, the tables and the captions is read from the result files: the run with the extended
 // baseline grids (results/full_ext/analysis/report.json, amendment 2 of the plan), the first run for the before/after
 // comparison (report.json of results/full_i9/results/full or results/full), and data/p3.json (derive.py: runs.csv,
@@ -164,7 +164,7 @@ K.setEqs({
 
 
 // ---------------------------------------------------------------- front matter
-const TITLE = 'When does a place-keyed memory of handover outcomes help conditional handover? A tuned comparison in ultra-dense beyond-5G upper mid-band street networks';
+const TITLE = 'Place-keyed outcome memory for conditional handover in ultra-dense beyond-5G networks';
 const ABSTRACT = `Conditional handover (CHO) lets the user execute a prepared handover on its own, which removes the late handover command but not handovers into cells the user soon leaves. We ask whether a memory of handover outcomes per 10 m place and direction of travel can steer CHO in ultra-dense upper mid-band street deployments. The controller, MemCHO, combines these counts with the predicted path of the user and sets, per user and candidate cell, the preparation threshold and the execution offset that the Rel-16 conditional configuration already carries. We compared it with A3, a per-user margin rule and CHO in a procedure-level simulation of a 10 GHz street grid with sites every 50 to 150 m, all tuned with the same budget. A first run favoured MemCHO, but the tuned baselines sat at the edge of their tuning grids; with wider grids the result reversed. Over ${nPairs} paired runs MemCHO had ${ab(uC.rel_pct)}% more unnecessary handovers than tuned CHO, which also stayed ahead at equal failure rate. MemCHO settled instead at a low-failure operating point: ${ab(fC.rel_pct)}% fewer failures than CHO (${ab(EX.fail_pm.rel_pct)}% without the 100 m site distance, where tuned CHO exceeded its failure budget), a ${ab(pC.rel_pct)}% smaller prepared set and a ${ab(rC.rel_pct)}% higher delivered rate. Without beam isolation, where interference is strongest, it also cut unnecessary handovers (${ab(xU.rel_pct)}% fewer than CHO) and failures (${ab(xF.rel_pct)}% fewer) but needed ${ab(xP.rel_pct)}% more prepared cells; in an open area it did not help. Handover rates of the simulator agree with ns-3/5G-LENA; failure rates were not calibrated.`;
 const KEYWORDS = ['Conditional handover', 'Unnecessary handover', 'Upper mid-band', 'Beyond-5G', '6G', 'Baseline tuning', 'System-level simulation'];
 const nWords = ABSTRACT.replace(/\$[^$]*\$/g, 'x').split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;

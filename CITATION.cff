@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software or these results, please cite them as below. The reference of the accompanying article will be added when it is published."
-title: "MemCHO: when does a place-keyed memory of handover outcomes help conditional handover? (simulator, scripts and results)"
+title: "MemCHO: place-keyed outcome memory for conditional handover in ultra-dense beyond-5G networks (simulator, scripts and results)"
 type: software
 license: MIT
 repository-code: "https://github.com/mjs19971997/memcho-beyond5g"
-date-released: "2026-10-15"
+date-released: "2026-10-16"
 version: "1.0.0"
 authors:
   - family-names: "Jalili Sanjarani"
