@@ -1,0 +1,974 @@
+{
+ "10.1109/PIMRC.2018.8580946": {
+  "title": [
+   "On the Basics of Conditional Handover for 5G Mobility"
+  ],
+  "authors": [
+   [
+    "Henrik",
+    "Martikainen"
+   ],
+   [
+    "Ingo",
+    "Viering"
+   ],
+   [
+    "Andreas",
+    "Lobinger"
+   ],
+   [
+    "Tommi",
+    "Jokela"
+   ]
+  ],
+  "cont": [
+   "2018 IEEE 29th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "1-7",
+  "art": null,
+  "year": [
+   2018,
+   9
+  ],
+  "type": "proceedings-article",
+  "event": "2018 IEEE 29th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+ },
+ "10.1109/IWCMC55113.2022.9824571": {
+  "title": [
+   "Conditional Handover in 5G - Principles, Future Use Cases and FR2 Performance"
+  ],
+  "authors": [
+   [
+    "Jedrzej",
+    "Stanczak"
+   ],
+   [
+    "Umur",
+    "Karabulut"
+   ],
+   [
+    "Ahmad",
+    "Awada"
+   ]
+  ],
+  "cont": [
+   "2022 International Wireless Communications and Mobile Computing (IWCMC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "660-665",
+  "art": null,
+  "year": [
+   2022,
+   5,
+   30
+  ],
+  "type": "proceedings-article",
+  "event": "2022 International Wireless Communications and Mobile Computing (IWCMC)"
+ },
+ "10.1109/PIMRC54779.2022.9977719": {
+  "title": [
+   "On the Modeling and Analysis of Fast Conditional Handover for 5G-Advanced"
+  ],
+  "authors": [
+   [
+    "Subhyal",
+    "Bin Iqbal"
+   ],
+   [
+    "Ahmad",
+    "Awada"
+   ],
+   [
+    "Umur",
+    "Karabulut"
+   ],
+   [
+    "Ingo",
+    "Viering"
+   ],
+   [
+    "Philipp",
+    "Schulz"
+   ],
+   [
+    "Gerhard P.",
+    "Fettweis"
+   ]
+  ],
+  "cont": [
+   "2022 IEEE 33rd Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "595-601",
+  "art": null,
+  "year": [
+   2022,
+   9,
+   12
+  ],
+  "type": "proceedings-article",
+  "event": "2022 IEEE 33rd Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+ },
+ "10.1109/ACCESS.2023.3260630": {
+  "title": [
+   "On the Analysis and Optimization of Fast Conditional Handover With Hand Blockage for Mobility"
+  ],
+  "authors": [
+   [
+    "Subhyal Bin",
+    "Iqbal"
+   ],
+   [
+    "Salman",
+    "Nadaf"
+   ],
+   [
+    "Ahmad",
+    "Awada"
+   ],
+   [
+    "Umur",
+    "Karabulut"
+   ],
+   [
+    "Philipp",
+    "Schulz"
+   ],
+   [
+    "Gerhard P.",
+    "Fettweis"
+   ]
+  ],
+  "cont": [
+   "IEEE Access"
+  ],
+  "vol": "11",
+  "issue": null,
+  "page": "30040-30056",
+  "art": null,
+  "year": [
+   2023
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/GLOBECOM46510.2021.9685348": {
+  "title": [
+   "ECHO: Enhanced Conditional Handover boosted by Trajectory Prediction"
+  ],
+  "authors": [
+   [
+    "Anna",
+    "Prado"
+   ],
+   [
+    "Hansini",
+    "Vijayaraghavan"
+   ],
+   [
+    "Wolfgang",
+    "Kellerer"
+   ]
+  ],
+  "cont": [
+   "2021 IEEE Global Communications Conference (GLOBECOM)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "01-06",
+  "art": null,
+  "year": [
+   2021,
+   12
+  ],
+  "type": "proceedings-article",
+  "event": "GLOBECOM 2021 - 2021 IEEE Global Communications Conference"
+ },
+ "10.1109/MVT.2019.2959065": {
+  "title": [
+   "Prediction-Based Conditional Handover for 5G mm-Wave Networks: A Deep-Learning Approach"
+  ],
+  "authors": [
+   [
+    "Changsung",
+    "Lee"
+   ],
+   [
+    "Hyoungjun",
+    "Cho"
+   ],
+   [
+    "Sooeun",
+    "Song"
+   ],
+   [
+    "Jong-Moon",
+    "Chung"
+   ]
+  ],
+  "cont": [
+   "IEEE Vehicular Technology Magazine"
+  ],
+  "vol": "15",
+  "issue": "1",
+  "page": "54-62",
+  "art": null,
+  "year": [
+   2020,
+   3
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/WCNC57260.2024.10570840": {
+  "title": [
+   "Advanced Conditional Handover in 5G and Beyond Using Q-Learning"
+  ],
+  "authors": [
+   [
+    "Sathia Chandrane",
+    "Sundararaju"
+   ],
+   [
+    "Shrinath",
+    "Ramamoorthy"
+   ],
+   [
+    "Dandra Prasad",
+    "Basavaraj"
+   ],
+   [
+    "Vanama",
+    "Phanindhar"
+   ]
+  ],
+  "cont": [
+   "2024 IEEE Wireless Communications and Networking Conference (WCNC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "1-6",
+  "art": null,
+  "year": [
+   2024,
+   4,
+   21
+  ],
+  "type": "proceedings-article",
+  "event": "2024 IEEE Wireless Communications and Networking Conference (WCNC)"
+ },
+ "10.1109/ICC.2013.6655592": {
+  "title": [
+   "A location-based self-optimizing algorithm for the inter-RAT handover parameters"
+  ],
+  "authors": [
+   [
+    "Ahmad",
+    "Awada"
+   ],
+   [
+    "Bernhard",
+    "Wegmann"
+   ],
+   [
+    "Ingo",
+    "Viering"
+   ],
+   [
+    "Anja",
+    "Klein"
+   ]
+  ],
+  "cont": [
+   "2013 IEEE International Conference on Communications (ICC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "6168-6173",
+  "art": null,
+  "year": [
+   2013,
+   6
+  ],
+  "type": "proceedings-article",
+  "event": "ICC 2013 - 2013 IEEE International Conference on Communications"
+ },
+ "10.1109/ACCESS.2024.3491500": {
+  "title": [
+   "On L1/L2-Triggered Mobility in 3GPP Release 18 and Beyond"
+  ],
+  "authors": [
+   [
+    "Behnam",
+    "Khodapanah"
+   ],
+   [
+    "Sanjay",
+    "Goyal"
+   ],
+   [
+    "Murat",
+    "Gursu"
+   ],
+   [
+    "Jedrzej",
+    "Stanczak"
+   ],
+   [
+    "Anastasios",
+    "Kakkavas"
+   ],
+   [
+    "Recep",
+    "Temelli"
+   ],
+   [
+    "Akin",
+    "Badalioglu"
+   ],
+   [
+    "Panagiotis",
+    "Spapis"
+   ],
+   [
+    "Chitradeep",
+    "Majumdar"
+   ]
+  ],
+  "cont": [
+   "IEEE Access"
+  ],
+  "vol": "12",
+  "issue": null,
+  "page": "171790-171806",
+  "art": null,
+  "year": [
+   2024
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/OJCOMS.2024.3373368": {
+  "title": [
+   "Cellular Wireless Networks in the Upper Mid-Band"
+  ],
+  "authors": [
+   [
+    "Seongjoon",
+    "Kang"
+   ],
+   [
+    "Marco",
+    "Mezzavilla"
+   ],
+   [
+    "Sundeep",
+    "Rangan"
+   ],
+   [
+    "Arjuna",
+    "Madanayake"
+   ],
+   [
+    "Satheesh Bojja",
+    "Venkatakrishnan"
+   ],
+   [
+    "Grégory",
+    "Hellbourg"
+   ],
+   [
+    "Monisha",
+    "Ghosh"
+   ],
+   [
+    "Hamed",
+    "Rahmani"
+   ],
+   [
+    "Aditya",
+    "Dhananjay"
+   ]
+  ],
+  "cont": [
+   "IEEE Open Journal of the Communications Society"
+  ],
+  "vol": "5",
+  "issue": null,
+  "page": "2058-2075",
+  "art": null,
+  "year": [
+   2024
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/ACCESS.2016.2642538": {
+  "title": [
+   "Handover Management in 5G and Beyond: A Topology Aware Skipping Approach"
+  ],
+  "authors": [
+   [
+    "Rabe",
+    "Arshad"
+   ],
+   [
+    "Hesham",
+    "Elsawy"
+   ],
+   [
+    "Sameh",
+    "Sorour"
+   ],
+   [
+    "Tareq Y.",
+    "Al-Naffouri"
+   ],
+   [
+    "Mohamed-Slim",
+    "Alouini"
+   ]
+  ],
+  "cont": [
+   "IEEE Access"
+  ],
+  "vol": "4",
+  "issue": null,
+  "page": "9073-9081",
+  "art": null,
+  "year": [
+   2016
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/ACCESS.2019.2937405": {
+  "title": [
+   "A Survey on Handover Management: From LTE to NR"
+  ],
+  "authors": [
+   [
+    "Muhammad",
+    "Tayyab"
+   ],
+   [
+    "Xavier",
+    "Gelabert"
+   ],
+   [
+    "Riku",
+    "Jantti"
+   ]
+  ],
+  "cont": [
+   "IEEE Access"
+  ],
+  "vol": "7",
+  "issue": null,
+  "page": "118907-118930",
+  "art": null,
+  "year": [
+   2019
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/ACCESS.2021.3067503": {
+  "title": [
+   "A Survey of Machine Learning Applications to Handover Management in 5G and Beyond"
+  ],
+  "authors": [
+   [
+    "Michael S.",
+    "Mollel"
+   ],
+   [
+    "Attai Ibrahim",
+    "Abubakar"
+   ],
+   [
+    "Metin",
+    "Ozturk"
+   ],
+   [
+    "Shubi Felix",
+    "Kaijage"
+   ],
+   [
+    "Michael",
+    "Kisangiri"
+   ],
+   [
+    "Sajjad",
+    "Hussain"
+   ],
+   [
+    "Muhammad Ali",
+    "Imran"
+   ],
+   [
+    "Qammer H.",
+    "Abbasi"
+   ]
+  ],
+  "cont": [
+   "IEEE Access"
+  ],
+  "vol": "9",
+  "issue": null,
+  "page": "45770-45802",
+  "art": null,
+  "year": [
+   2021
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1038/s41598-026-73269-1": {
+  "title": [
+   "Handover reduction in 5G mobile networks using ensemble learning method"
+  ],
+  "authors": [
+   [
+    "Mostafa Jalili",
+    "Sanjarani"
+   ],
+   [
+    "Yasser Elmi",
+    "Sola"
+   ],
+   [
+    "Hesam",
+    "Hasanpour"
+   ],
+   [
+    "Ali Akbar",
+    "Neghabi"
+   ]
+  ],
+  "cont": [
+   "Scientific Reports"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": null,
+  "art": null,
+  "year": [
+   2026,
+   9,
+   26
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1007/978-3-642-12331-3_2": {
+  "title": [
+   "The ns-3 Network Simulator"
+  ],
+  "authors": [
+   [
+    "George F.",
+    "Riley"
+   ],
+   [
+    "Thomas R.",
+    "Henderson"
+   ]
+  ],
+  "cont": [
+   "Modeling and Tools for Network Simulation"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "15-34",
+  "art": null,
+  "year": [
+   2010
+  ],
+  "type": "book-chapter",
+  "event": null
+ },
+ "10.1016/j.simpat.2019.101933": {
+  "title": [
+   "An E2E simulator for 5G NR networks"
+  ],
+  "authors": [
+   [
+    "Natale",
+    "Patriciello"
+   ],
+   [
+    "Sandra",
+    "Lagen"
+   ],
+   [
+    "Biljana",
+    "Bojovic"
+   ],
+   [
+    "Lorenza",
+    "Giupponi"
+   ]
+  ],
+  "cont": [
+   "Simulation Modelling Practice and Theory"
+  ],
+  "vol": "96",
+  "issue": null,
+  "page": "101933",
+  "art": "101933",
+  "year": [
+   2019,
+   11
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1049/el:19911328": {
+  "title": [
+   "Correlation model for shadow fading in mobile radio systems"
+  ],
+  "authors": [
+   [
+    "M.",
+    "Gudmundson"
+   ]
+  ],
+  "cont": [
+   "Electronics Letters"
+  ],
+  "vol": "27",
+  "issue": "23",
+  "page": "2145-2146",
+  "art": null,
+  "year": [
+   1991,
+   11,
+   7
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/TWC.2012.051512.111532": {
+  "title": [
+   "Analysis of Cell Load Coupling for LTE Network Planning and Optimization"
+  ],
+  "authors": [
+   [
+    "I.",
+    "Siomina"
+   ],
+   [
+    "",
+    "Di Yuan"
+   ]
+  ],
+  "cont": [
+   "IEEE Transactions on Wireless Communications"
+  ],
+  "vol": "11",
+  "issue": "6",
+  "page": "2287-2297",
+  "art": null,
+  "year": [
+   2012,
+   6
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1038/s41598-026-71553-8": {
+  "title": [
+   "Performance characterization of millimeter-wave networked sensing systems under high-mobility constraints for 6G Industrial IoT"
+  ],
+  "authors": [
+   [
+    "Muhammad Zaman",
+    "Aslam"
+   ],
+   [
+    "Ali",
+    "Raza"
+   ],
+   [
+    "Yawar Abbas",
+    "Bangash"
+   ],
+   [
+    "Saad",
+    "Aslam"
+   ],
+   [
+    "Amjad",
+    "Ali"
+   ],
+   [
+    "Farrukh",
+    "Hassan"
+   ]
+  ],
+  "cont": [
+   "Scientific Reports"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": null,
+  "art": null,
+  "year": [
+   2026,
+   9,
+   13
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/pimrc69400.2026.11711444": {
+  "title": [
+   "Atomic Handover for 6G Nomadic Non-Public Networks Using Edge-Based Spectrum Brokering"
+  ],
+  "authors": [
+   [
+    "Daniel",
+    "Lindenschmitt"
+   ],
+   [
+    "Hans D.",
+    "Schotten"
+   ]
+  ],
+  "cont": [
+   "2026 IEEE 37th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "1-6",
+  "art": null,
+  "year": [
+   2026,
+   9
+  ],
+  "type": "proceedings-article",
+  "event": "2026 IEEE 37th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)"
+ },
+ "10.64751/264n8122": {
+  "title": [
+   "ISAC AWARE AI-RAN ORCHESTRATION FOR MISSIONCRITICAL MOBILITY AND INTELLIGENT INFRASTRUCTURE IN 6G NETWORKS"
+  ],
+  "authors": [
+   [
+    "",
+    "Siva Sudheer Mahadasu"
+   ],
+   [
+    "",
+    "Dr. Nazila Safavi"
+   ]
+  ],
+  "cont": [
+   "International Journal of AI Electronics and Nexus Energy"
+  ],
+  "vol": "2",
+  "issue": "2",
+  "page": "956-962",
+  "art": null,
+  "year": [
+   2026,
+   6,
+   12
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.48084/etasr.18362": {
+  "title": [
+   "Robust High-Speed Train Handover Optimization Using Velocity-Adaptive Fuzzy Logic in 5G/B5G Networks"
+  ],
+  "authors": [
+   [
+    "Liku Kimola",
+    "Chenge"
+   ],
+   [
+    "Clement Temaneh",
+    "Nyah"
+   ],
+   [
+    "Edwin O.",
+    "Ataro"
+   ]
+  ],
+  "cont": [
+   "Engineering, Technology &amp; Applied Science Research"
+  ],
+  "vol": "16",
+  "issue": "3",
+  "page": "35836-35847",
+  "art": null,
+  "year": [
+   2026,
+   6,
+   6
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/icc59461.2026.11587432": {
+  "title": [
+   "Contextual Bandits and Reconfigurable Intelligent Surfaces for Predictive LTM Handover Decisions"
+  ],
+  "authors": [
+   [
+    "Ainna Yue",
+    "Moreno-Locubiche"
+   ],
+   [
+    "Josep",
+    "Vidal"
+   ],
+   [
+    "Olga",
+    "Muñoz-Medina"
+   ],
+   [
+    "Margarita",
+    "Cabrera-Bean"
+   ]
+  ],
+  "cont": [
+   "ICC 2026 - IEEE International Conference on Communications"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": "1-7",
+  "art": null,
+  "year": [
+   2026,
+   5,
+   24
+  ],
+  "type": "proceedings-article",
+  "event": "ICC 2026 - IEEE International Conference on Communications"
+ },
+ "10.3389/fcomp.2026.1818011": {
+  "title": [
+   "A DBSAHO scheme for smooth movement in heterogeneous network-based distributed mobility systems"
+  ],
+  "authors": [
+   [
+    "Prabha",
+    "Mahenthiran"
+   ],
+   [
+    "Dinakaran",
+    "Muruganandam"
+   ]
+  ],
+  "cont": [
+   "Frontiers in Computer Science"
+  ],
+  "vol": "8",
+  "issue": null,
+  "page": null,
+  "art": "1818011",
+  "year": [
+   2026,
+   5,
+   8
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.51483/ijaiml.6.12s.2026.118-129": {
+  "title": [
+   "Federated Reinforcement Learning for Optimized Spectrum and Mobility Management in 5G NR Networks"
+  ],
+  "authors": [
+   [
+    "Kiran",
+    "Garde"
+   ]
+  ],
+  "cont": [
+   "International Journal of Artificial Intelligence and Machine Learning"
+  ],
+  "vol": "6",
+  "issue": "12s",
+  "page": "118-129",
+  "art": null,
+  "year": [
+   2026
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.1109/jsac.2026.3652037": {
+  "title": [
+   "Meta-Learning-Based Handover Management in NextG O-RAN"
+  ],
+  "authors": [
+   [
+    "Michail",
+    "Kalntis"
+   ],
+   [
+    "George",
+    "Iosifidis"
+   ],
+   [
+    "José",
+    "Suárez-Varela"
+   ],
+   [
+    "Andra",
+    "Lutu"
+   ],
+   [
+    "Fernando A.",
+    "Kuipers"
+   ]
+  ],
+  "cont": [
+   "IEEE Journal on Selected Areas in Communications"
+  ],
+  "vol": "44",
+  "issue": null,
+  "page": "3251-3267",
+  "art": null,
+  "year": [
+   2026
+  ],
+  "type": "journal-article",
+  "event": null
+ },
+ "10.46620/ursigass26/auan6063": {
+  "title": [
+   "Vertical Handover Between Terrestrial and Satellite Links in 6G-and-Beyond Systems: An ML-Based Method"
+  ],
+  "authors": [
+   [
+    "Małgorzata",
+    "Wasilewska"
+   ],
+   [
+    "Michał",
+    "Sybis"
+   ]
+  ],
+  "cont": [
+   "Proceedings of the XXXVIth URSI General Assembly and Scientific Symposium – GASS 2026"
+  ],
+  "vol": null,
+  "issue": null,
+  "page": null,
+  "art": null,
+  "year": [
+   2026
+  ],
+  "type": "proceedings-article",
+  "event": "XXXVIth URSI General Assembly and Scientific Symposium"
+ }
+}

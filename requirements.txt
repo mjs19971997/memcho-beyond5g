@@ -1,0 +1,8 @@
+# Python 3.12 (64-bit).  These are the versions the package was developed and checked with.
+numpy==2.4.6
+scipy==1.18.0
+matplotlib==3.11.0
+
+# Optional: PyTorch, only for the back-end self-test (selftest_backend.py) and, if that test finds it
+# faster on your machine, for the radio computations.  The study runs completely without it.
+# Install it from the official index, NOT from this file (see requirements-torch.txt).

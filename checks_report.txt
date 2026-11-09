@@ -1,0 +1,60 @@
+
+== 1 geometry ==
+PASS  grid isd 50: 79 sites, all in a street, nearest neighbours 28.8..53.1 m
+PASS  grid isd 100: 40 sites, all in a street, nearest neighbours 42.0..101.6 m
+PASS  grid isd 150: 26 sites, all in a street, nearest neighbours 66.6..151.1 m
+    building blocks: [[-423.0, -240.0, -10.0, -10.0], [-423.0, 10.0, -10.0, 240.0], [10.0, -240.0, 423.0, -10.0], [10.0, 10.0, 423.0, 240.0]]
+PASS  line of sight, six hand cases  [got [1, 1, 0, 1, 0, 1]]
+PASS  ray touching a building corner is clear, ray cutting the corner is blocked
+PASS  open area: hexagonal grid, nearest-neighbour distance = isd  [60 sites]
+PASS  radio-map lookup = direct path loss away from LOS edges  [max |diff| 0.0019 dB]
+PASS  trajectories (veh16): constant speed, always inside a street  [speeds 14.5..17.5 m/s]
+PASS  trajectories (ped): constant speed, always inside a street  [speeds 1.2..1.8 m/s]
+PASS  turns at the four-way intersection: straight 0.5  [2459 passes, straight 0.482]
+
+== 2 path loss (TR 38.901 Table 7.4.1-1), computed by hand ==
+PASS  UMi LOS  10 GHz d2D 50 m  hBS 10 hUT 1.5 (PL1)  [code 88.2083, hand 88.2083]
+PASS  UMi NLOS 10 GHz d2D 50 m  [code 103.8920, hand 103.8920]
+PASS  UMi LOS  3.5 GHz d2D 200 m (PL1, below d'BP 210.1 m)  [code 91.6112, hand 91.6112]
+PASS  UMi LOS  3.5 GHz d2D 400 m (PL2, above d'BP)  [code 103.2331, hand 103.2331]
+PASS  UMa LOS  3.5 GHz d2D 100 m hBS 25  [code 83.1382, hand 83.1382]
+PASS  UMa NLOS 3.5 GHz d2D 100 m hBS 25  [code 103.0375, hand 103.0376]
+PASS  breakpoint d'BP 10 GHz hBS 10 hUT 1.5 [m]  [code 600.4154, hand 600.4150]
+PASS  breakpoint d'BP 3.5 GHz [m]  [code 210.1454, hand 210.1450]
+PASS  UMi LOS probability at 100 m  [code 0.2310, hand 0.2310]
+PASS  UMi LOS continuous at the breakpoint  [110.7484 / 110.7484 dB]
+PASS  NLOS loss >= LOS loss everywhere (UMi 7, 10, 15 GHz; UMa 3.5 GHz)
+PASS  noise power 200 MHz, NF 7 dB  [-83.990 dBm]
+
+== 3 radio statistics ==
+PASS  static shadowing: std 4.01 dB on LOS links (4.0), 7.86 dB on NLOS links (7.82)
+PASS  static shadowing: correlation 0.32 at 10 m (1/e = 0.37), -0.05 at 20 m
+PASS  static shadowing: correlation between sites 0.51 (0.5)
+PASS  clutter: share of unobstructed in-street links follows the UMi LOS probability  [20-40 m: 0.74 (0.79); 40-80 m: 0.45 (0.45); 80-160 m: 0.24 (0.19); 160-320 m: 0.10 (0.08)]
+PASS  time-varying part: std 1.50 dB (1.5), correlation after 1 s 0.37 (0.37)
+PASS  L1 sample error: std 1.00 dB (1.0), mean -0.001
+PASS  L3 filter: a = 0.5 at 200 ms (k = 4); 5 samples of 40 ms have the same effect  [a(40 ms) = 0.1294]
+
+== 4 determinism ==
+PASS  same seed twice: identical event logs and metrics for all 6 rules  [events per rule: [1698, 1591, 1685, 1723, 1577, 1623]]
+PASS  another seed: different events  [1745 vs 1698 events]
+
+== 5 conservation (strong interference, chi = 1, so that many failures occur) ==
+PASS  A3        counts add up  [attempts 1698 = useful 1484 + unnecessary 153 + early 3 + wrong 12 + late 9 + censored 37; failures 24]
+PASS  A3 late   counts add up  [attempts 1591 = useful 1263 + unnecessary 59 + early 0 + wrong 4 + late 234 + censored 31; failures 238]
+PASS  PUM       counts add up  [attempts 1685 = useful 1488 + unnecessary 141 + early 3 + wrong 5 + late 10 + censored 38; failures 18]
+PASS  CHO       counts add up  [attempts 1719 = useful 1495 + unnecessary 174 + early 4 + wrong 7 + late 0 + censored 39; failures 15; preparations 2429 = lost 161 + cancelled 0 + used 1718 + unused 544 + open 6]
+PASS  CHO late  counts add up  [attempts 1577 = useful 1492 + unnecessary 45 + early 0 + wrong 2 + late 0 + censored 38; failures 2; preparations 2292 = lost 41 + cancelled 0 + used 1577 + unused 662 + open 12]
+PASS  MemCHO    counts add up  [attempts 1622 = useful 1497 + unnecessary 88 + early 1 + wrong 0 + late 0 + censored 36; failures 2; preparations 2389 = lost 93 + cancelled 4 + used 1622 + unused 664 + open 6]
+    failure causes seen in this check (all rules): {'late_cmd': 253, 'late_prep': 0, 'late_rlf': 5, 'cov_rlf': 0, 'exec_fail': 40, 'early_rlf': 1}
+
+== 6 equivalences ==
+PASS  per-user margin with zero weights = A3  [1745 events]
+PASS  memory-steered CHO with zero weights = CHO (events and all metrics)  [1723 events]
+PASS  ... and with non-zero weights it differs
+PASS  CHO with immediate execution = A3 (3 dB, 160 ms)  [1698 / 1698 events, failures 24 / 24]
+PASS  CHO with immediate execution = A3 (1 dB, 40 ms)  [1894 / 1894 events, failures 31 / 31]
+PASS  CHO with immediate execution = A3 (6 dB, 320 ms)  [1591 / 1591 events, failures 238 / 238]
+    without that switch a lost configuration is not a handover failure: 544 of 1838 events differ (2626 lost configurations); this difference is intended
+
+0 check(s) failed
